@@ -100,11 +100,11 @@
             <h2>Forms</h2>
             <div>
                 <div class="form01">
-                    <form onsubmit="return sendForms" method="POST">
+                    <form name="publish" method="POST">
                         <input class="input01" type="text" placeholder="Name">
                         <input class="input02" type="email" placeholder="Email">
                         <input class="input03" type="password" placeholder="Password">
-                        <button onclick="sendForms()" class="button01" type="submit">Send</button>
+                        <button class="button01" type="submit">Send</button>
                     </form>
                 </div>
                 <div class="form02">
@@ -173,25 +173,60 @@
 
     <script src="../public/js/website.js" type="text/javascript" ></script>
     <script>
-        var allForms = new Array(3);
-            allForms[0] = document.getElementByClassName("input01");
-            allForms[1] = document.getElementByClassName("input02");
-            allForms[2] = document.getElementByClassName("input03");
+       // var allForms = new Array(3);
+       //     allForms[0] = document.getElementByClassName("input01");
+      //      allForms[1] = document.getElementByClassName("input02");
+       //     allForms[2] = document.getElementByClassName("input03");
       
-        function sendForm() {
         //var x = document.getElementsByClassName["input01"]["input02"]["input03"].value;
-        var inpObj01 = document.getElementByClassName("input01");
-        var inpObj02 = document.getElementByClassName("input02");
-        var inpObj03 = document.getElementByClassName("input03");
-        function sendForms() {
-            if (inpObj01 == "") {
-            alert("Please, write your name");
-            }
-        }
-        alert("inpObj01");
+         var inpObj01 = document.getElementByClassName("input01");
+         var inpObj02 = document.getElementByClassName("input02");
+         var inpObj03 = document.getElementByClassName("input03");
+      
+
+        document.forms.publish.onsubmit = function() {
+        var inpObj01 = this.text.value;
+        var inpObj02 = this.email.value;
+        //var inpObj03 = e.target.value;
+        alert(inpObj01 + inpObj02);
        
-        }
-     
+        };
+        onsubmit = function() {
+            let value = form.text.value;
+            if (value == '') return false; 
+            complete(value);
+            return false;
+        };
+
+    //     function sendForms(text, callback) {
+    //         var inpObj01 = document.getElementByClassName("input01");
+    //         var inpObj02 = document.getElementByClassName("input02");
+    //         var inpObj03 = document.getElementByClassName("input03");
+    //         function complete(value) {
+    //         document.onkeydown = null;
+    //         callback(value);
+    //   }
+
+    //     onsubmit = function() {
+    //     let value = form.text.value;
+    //     if (value == '') return false; 
+
+    //     complete(value);
+    //     return false;
+    //   };
+
+
+
+
+    //     document.forms.publish.onsubmit = function() {
+    //     var message = this.message.value;
+    //     alert(value);
+    //     return false;
+    // };
+    //     alert(value);
+    //   });
+    // };
+
       //(function () {   })();
     </script>
 </body>
