@@ -193,30 +193,31 @@
             } else if (inpObj03 == '') {
             alert('please write your password');
             } else {
-             alert(inpObj01 + " " + inpObj02 + " " + inpObj03);
+             alert(inpObj01 + "\n" + inpObj02 + "\n" + inpObj03);
             }
          }
 
          var gender = document.getElementById("gender");
+         var inpObj06 = document.getElementsByClassName("input06")[0].value;
+         var inpObj06 = document.querySelector('input[type="date"]');
+         var timeIsNow = new Date();
             gender.addEventListener("submit", function(event) {
-                var data = new FormData(gender);
-                var output = "";
-                for (const entry of data) {
-                output = entry[1] + "\r";
-                };
-                alert(output);
-                }, false);
-       
-        // var inpObj04 = document.getElementsByClassName("input04")[0].value;
-        // var inpObj05 = document.getElementsByClassName("input05")[0].value;
-        //     if (!inpObj04) {
-        //     alert(inpObj04);
-        //     } else if (!inpObj05) {
-        //     alert(inpObj05);
-        //     } else {
-        //     alert("check your gender");
-        //     }
-        // }
+            var data = new FormData(gender);
+            var output = "";
+            for (const entry of data) {
+            output = entry[1] + "\r";
+            };
+                if (output == '') {
+                alert("please choose your gender and date");
+                } else if (inpObj06.value == "") {
+                    inpObj06.value == timeIsNow;
+                    alert("please choose your date" + "\n" + "example: today is" + "\n" + timeIsNow);
+                }
+                else {
+                alert(output + inpObj06.value);
+                }
+            }, false);  
+                    
 
       //(function () {   })();
     </script>
