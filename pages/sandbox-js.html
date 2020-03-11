@@ -127,7 +127,7 @@
                             <option class="option02">United Kingdom</option>
                             <option class="option03">United States</option>
                         </select>
-                        <button class="button02" type="submit">Send</button>
+                        <button onclick="myLoc()" class="button02" type="submit">Send</button>
                     </form>
                 </div>
             </div>
@@ -217,7 +217,25 @@
                 alert(output + inpObj06.value);
                 }
             }, false);  
-                    
+
+        function myLoc() {
+            var inpObj07 = document.getElementsByClassName("input07")[0].value;
+            var inpObj08 = document.getElementsByClassName("input08")[0].value;
+            var inpObj09 = document.getElementsByClassName("select01")[0].value;
+                if (inpObj07 == '') {
+                alert('please write your address');
+                } else if (inpObj08 == '') {
+                alert('please write your city');
+                } else if (inpObj09 == '') {
+                alert('please select your country');
+                } else {
+                alert(inpObj07 + "\n" + inpObj08 + "\n" + inpObj09);
+                }
+        }
+
+
+
+
 
       //(function () {   })();
     </script>
