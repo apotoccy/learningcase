@@ -135,7 +135,7 @@
         <div class="allButtons">
             <h2>Buttons</h2>
             <button class="button03" type="button">Btn 01</button>
-            <button class="button04" type="button">Btn 01</button>
+            <button class="button04" type="button">Btn 02</button>
             <input class="input09" type="button" value="Btn 03" />
         </div>
         <div class="allLists">
@@ -204,18 +204,18 @@
             gender.addEventListener("submit", function(event) {
             var data = new FormData(gender);
             var output = "";
-            for (const entry of data) {
-            output = entry[1] + "\r";
-            };
-                if (output == '') {
-                alert("please choose your gender and date");
-                } else if (inpObj06.value == "") {
+                for (const entry of data) {
+                output = entry[1] + "\r";
+                };
+                    if (output == '') {
+                    alert("please choose your gender and date");
+                    } else if (inpObj06.value == "") {
                     inpObj06.value == timeIsNow;
                     alert("please choose your date" + "\n" + "example: today is" + "\n" + timeIsNow);
-                }
-                else {
-                alert(output + inpObj06.value);
-                }
+                    }
+                    else {
+                    alert(output + inpObj06.value);
+                    }
             }, false);  
 
         function myLoc() {
@@ -232,6 +232,20 @@
                 alert(inpObj07 + "\n" + inpObj08 + "\n" + inpObj09);
                 }
         }
+        
+            var Btn01 = document.getElementsByClassName("button03")[0];
+            Btn01.addEventListener('click', function(){
+                alert("Button 01");
+                })
+               
+            var Btn02 = document.getElementsByClassName("button04")[0];
+            Btn02.addEventListener('click', function(){
+                alert("Button 02");
+                })
+            var inpBtn01 = document.getElementsByClassName("input09")[0];
+            inpBtn01.addEventListener('click', function(){
+                alert("Button 03");
+                })
 
 
 
