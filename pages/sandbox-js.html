@@ -251,51 +251,57 @@
             alert("Button 03");
         });
 
-        var pushColor = "green";
-
         var allLists = document.getElementsByClassName('allLists')[0];
         var listItems = allLists.getElementsByTagName('li');
         var listItemsQty = listItems.length;
+        var pushColor = "green";
+           // alert(listItemsQty);
 
-        alert(listItemsQty);
-
-        var $titlediv = document.getElementById("lists"),
+        var $titlediv = document.getElementsByClassName("allLists")[0],
             title = $titlediv.innerHTML;
-
+        //     //alert(title);
         var getElemStyle = function(elem, property) {
             return window.getComputedStyle(elem, null).getPropertyValue(property);
         };
 
+        //alert (getElemStyle($titlediv, "width"));
+
         var listEvnt = function(elem) {
             elem.addEventListener('click', function(e) {
-                var $th = this,
-                    currentColor = $th.getElementsByTagName('li')[0];
-                $anch.style.color = pushColor;
-                alert(pushColor);
+                var x = this;
+                //$anch = $th.getElementsByTagName('li')[0];
+                currentColor = getElemStyle(x, 'color');
+                x.style.color = pushColor;
             });
-        };
+            elem.addEventListener('click', function(e) {
+                var x = this;
+                //$anch = $th.getElementsByTagName('li')[0];
+                currentColor = getElemStyle(x, 'color');
+                x.style.color = pushColor;
+            });
+        }; 
 
         var currentColor, hoverColor = "red";
-
         var changeListItemColor = function(elem) {
             elem.addEventListener('mouseenter', function(e) {
-                var $th = this,
-                $anch = $th.getElementsByTagName('li')[0];
-                currentColor = getElemStyle($anch, 'color');
-                $anch.style.color = hoverColor;
+                var x = this;
+                //y = x.getElementsByTagName('li')[0];
+                currentColor = getElemStyle(x, 'color');
+                x.style.color = hoverColor;
             });
 
             elem.addEventListener('mouseleave', function(e) {
-                var $th = this,
-                $anch = $th.getElementsByTagName('li')[0];
-                $anch.style.color = currentColor;
-                });
+                var x = this;
+                //y = x.getElementsByTagName('li')[0];
+                x.style.color = currentColor;
+            });
+        };
+            for (var i = 0; i < listItemsQty; i++) {
+                changeListItemColor(listItems[i]);
+                listEvnt(listItems[i]);
             };
 
-            for (var i = 0; i < listItemsQty; i++) {
-                changeMenuItemColor(listItems[i]);
-                menuEvnt(listItems[i]);
-            }
+            
 
       //(function () {   })();
     </script>
