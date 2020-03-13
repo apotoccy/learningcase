@@ -172,7 +172,6 @@
 
     </div>
 
-
     <script src="../public/js/website.js" type="text/javascript" ></script>
     <script>
         // var allForms = new Array(3);
@@ -198,8 +197,8 @@
          }
 
          var gender = document.getElementById("gender");
-         var inpObj06 = document.getElementsByClassName("input06")[0].value;
-         var inpObj06 = document.querySelector('input[type="date"]');
+         var inpObj06 = document.getElementsByClassName("input06")[0];
+         //var inpObj06 = document.querySelector('input[type="date"]');
          var timeIsNow = new Date();
 
          gender.addEventListener("submit", function(event) {
@@ -210,8 +209,10 @@
                 output = entry[1] + "\r";
             }
 
-            if (output == '') {
-                alert("please choose your gender and date");
+            if (output == '' && inpObj06.value != "") {
+                alert("please choose your gender");
+            } if (output == '' && inpObj06.value == "") {
+                 alert("please choose your gender and date");
             } else if (inpObj06.value == "") {
                 inpObj06.value == timeIsNow;
                 alert("please choose your date" + "\n" + "example: today is" + "\n" + timeIsNow);
@@ -295,7 +296,6 @@
                 changeMenuItemColor(listItems[i]);
                 menuEvnt(listItems[i]);
             }
-
 
       //(function () {   })();
     </script>
