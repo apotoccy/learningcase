@@ -259,23 +259,15 @@
 
         var $titlediv = document.getElementsByClassName("allLists")[0],
             title = $titlediv.innerHTML;
-        //     //alert(title);
+           //alert(title);
         var getElemStyle = function(elem, property) {
             return window.getComputedStyle(elem, null).getPropertyValue(property);
         };
-
-        //alert (getElemStyle($titlediv, "width"));
+            //alert (getElemStyle($titlediv, "width"));
 
         var listEvnt = function(elem) {
             elem.addEventListener('click', function(e) {
                 var x = this;
-                //$anch = $th.getElementsByTagName('li')[0];
-                currentColor = getElemStyle(x, 'color');
-                x.style.color = pushColor;
-            });
-            elem.addEventListener('click', function(e) {
-                var x = this;
-                //$anch = $th.getElementsByTagName('li')[0];
                 currentColor = getElemStyle(x, 'color');
                 x.style.color = pushColor;
             });
@@ -285,14 +277,12 @@
         var changeListItemColor = function(elem) {
             elem.addEventListener('mouseenter', function(e) {
                 var x = this;
-                //y = x.getElementsByTagName('li')[0];
                 currentColor = getElemStyle(x, 'color');
                 x.style.color = hoverColor;
             });
 
             elem.addEventListener('mouseleave', function(e) {
                 var x = this;
-                //y = x.getElementsByTagName('li')[0];
                 x.style.color = currentColor;
             });
         };
