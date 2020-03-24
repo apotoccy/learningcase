@@ -265,6 +265,16 @@
             return window.getComputedStyle(elem, null).getPropertyValue(property);
         };
         //alert (getElemStyle($titlediv, "width"));
+       
+        var unBacklight = function(elem) {
+            for (var i = 0; i < listItemsQty; i++) {
+                changeListItemColor(listItems[i]);
+                listEvnt(listItems[i]);
+            };
+            if(listEvnt(listItems[i]) = 1) {
+                key.romove("data-key") 
+            };
+        };
 
         var listEvnt = function(elem) {
             elem.addEventListener('click', function(e) {
