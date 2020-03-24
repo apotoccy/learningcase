@@ -265,20 +265,34 @@
             return window.getComputedStyle(elem, null).getPropertyValue(property);
         };
         //alert (getElemStyle($titlediv, "width"));
-       
-        var unBacklight = function(elem) {
+
+
+        // idea is to execute on click before highlighting the list item a method,
+        // that unHighlight the list items
+        var unBacklight = function() {
+            // to do this we go through every list item in the loop
             for (var i = 0; i < listItemsQty; i++) {
-                changeListItemColor(listItems[i]);
-                listEvnt(listItems[i]);
-            };
-            if(listEvnt(listItems[i]) = 1) {
-                key.romove("data-key") 
-            };
+                // we get listItem
+                var $listItem = listItems[i];
+                // we get key attribute of this item
+                var key = $listItem.getAttribute('data-key');
+                // we check if it equal to 1
+                if (key == '1') {
+                    // and if it is we remove key attribute
+                    $listItem.removeAttribute('data-key');
+                    // and return it's color to default
+                    $listItem.style.color = currentColor;
+                }
+            }
         };
 
         var listEvnt = function(elem) {
             elem.addEventListener('click', function(e) {
                 var x = this;
+
+                // we put it here
+                unBacklight();
+
                 var key = x.getAttribute('data-key');
                 if (key != '1') {
                     x.setAttribute('data-key', '1');
